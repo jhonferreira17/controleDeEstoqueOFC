@@ -16,6 +16,6 @@ public class SplashActivity extends AppCompatActivity {
         new Handler(getMainLooper()).postDelayed(() -> {
             finish();
             startActivity(new Intent(this, LoginActivity.class));
-        },3000);
+        },1000);
     }
 }
