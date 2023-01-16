@@ -1,7 +1,9 @@
 package com.example.controledeestoque;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Handler;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -9,5 +11,11 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash1);
+
+
+        new Handler(getMainLooper()).postDelayed(() -> {
+            finish();
+            startActivity(new Intent(this, LoginActivity.class));
+        },3000);
     }
 }
