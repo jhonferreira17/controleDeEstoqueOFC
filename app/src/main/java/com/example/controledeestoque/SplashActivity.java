@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.example.controledeestoque.autenticacao.LoginActivity;
+
 public class SplashActivity extends AppCompatActivity {
 
     @Override
