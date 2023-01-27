@@ -44,4 +44,7 @@ dependencies {
     //FIREBASE
     implementation platform('com.google.firebase:firebase-bom:31.1.1')
     implementation 'com.google.firebase:firebase-auth'
+
+    //SWIPEABLE
+    implementation 'com.github.tsuryo:Swipeable-RecyclerView:1.1'
 }

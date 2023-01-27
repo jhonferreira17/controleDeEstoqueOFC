@@ -13,6 +13,9 @@
         android:theme="@style/Theme.ControleDeEstoque"
         tools:targetApi="31">
         <activity
+            android:name=".ControleProdutoActivity"
+            android:exported="false" />
+        <activity
             android:name=".CadastroProdutoActivity"
             android:exported="false" />
         <activity
