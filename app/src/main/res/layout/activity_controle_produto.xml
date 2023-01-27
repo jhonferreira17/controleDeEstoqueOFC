@@ -11,13 +11,20 @@
         android:id="@+id/include2"
         layout="@layout/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
+    <com.tsuryo.swipeablerv.SwipeableRecyclerView
         android:id="@+id/rvProduto"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        tools:listitem="@layout/item_produto"
+        tools:itemCount="1"
+        app:leftBgColor="@color/white"
+        app:leftImage="@drawable/ic_remove"
+        app:rightBgColor="@color/white"
+        app:rightImage="@drawable/ic_edit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
