@@ -45,6 +45,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-database'
     implementation 'com.google.firebase:firebase-storage'
 
+    //TedPermission
+    implementation 'io.github.ParkSangGwon:tedpermission-normal:3.3.0'
+
 
     //SWIPEABLE
     implementation 'com.github.tsuryo:Swipeable-RecyclerView:1.1'
