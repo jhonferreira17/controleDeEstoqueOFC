@@ -1,24 +1,17 @@
 package com.example.controledeestoque.autenticacao;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.controledeestoque.MainActivity;
 import com.example.controledeestoque.R;
+import com.example.controledeestoque.activity.ControleProdutoActivity;
 import com.example.controledeestoque.helper.FirebaseHelper;
 import com.example.controledeestoque.model.Usuario;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
 
 public class CadastroActivity extends AppCompatActivity {
 
@@ -73,7 +66,7 @@ public class CadastroActivity extends AppCompatActivity {
                usuario.setId(id);
 
                finish();
-               startActivity(new Intent(this, MainActivity.class));
+               startActivity(new Intent(this, ControleProdutoActivity.class));
            }
         });
     }

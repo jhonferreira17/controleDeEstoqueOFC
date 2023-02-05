@@ -13,10 +13,10 @@
         android:theme="@style/Theme.ControleDeEstoque"
         tools:targetApi="31">
         <activity
-            android:name=".ControleProdutoActivity"
+            android:name=".activity.ControleProdutoActivity"
             android:exported="false" />
         <activity
-            android:name=".CadastroProdutoActivity"
+            android:name=".activity.FromProdutoActivity"
             android:exported="false" />
         <activity
             android:name=".autenticacao.RecuperarContaActivity"
@@ -40,7 +40,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".SplashActivity"
+            android:name=".activity.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -52,9 +52,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
     </application>
 
 </manifest>

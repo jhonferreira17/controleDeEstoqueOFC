@@ -40,7 +40,7 @@ public class RecuperarContaActivity extends AppCompatActivity {
     private void enviarEmail(String email) {
         FirebaseHelper.getAuth().sendPasswordResetEmail(email).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
-                Toast.makeText(this, "Email enviado com sucess!", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Email enviado com sucesso!", Toast.LENGTH_LONG).show();
             } else {
                 String error = task.getException().getMessage();
                 Toast.makeText(this, error, Toast.LENGTH_SHORT).show();

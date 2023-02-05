@@ -9,14 +9,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.controledeestoque.MainActivity;
 import com.example.controledeestoque.R;
-import com.example.controledeestoque.databinding.ActivityLoginBinding;
+import com.example.controledeestoque.activity.ControleProdutoActivity;
 import com.example.controledeestoque.helper.FirebaseHelper;
 
 public class LoginActivity extends AppCompatActivity {
-
-    private ActivityLoginBinding binding;
     private EditText edit_email;
     private EditText edit_senha;
     private TextView text_criar_conta;
@@ -26,13 +23,10 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
 
-        binding= ActivityLoginBinding.inflate(getLayoutInflater());
-
-        setContentView(binding.getRoot());
-
-      iniciaComponentes();
-      configCliques();
+        iniciaComponentes();
+        configCliques();
       botaoLogar.setOnClickListener(v->logar());
 
 
@@ -40,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     public void logar(){
 
         String email = edit_email.getText().toString().trim();
-        String senha = edit_senha.getText().toString();
+        String senha = edit_senha.getText().toString().trim();
 
         if(!email.isEmpty()){
             if(!senha.isEmpty()){
@@ -64,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
         ).addOnCompleteListener(task -> {
             if(task.isSuccessful()){
                 finish();
-                startActivity(new Intent(this, MainActivity.class));
+                startActivity(new Intent(this, ControleProdutoActivity.class));
             }else{
                 String error = task.getException().getMessage();
                 Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
@@ -73,12 +67,12 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void configCliques(){
-        binding.textCadastro.setOnClickListener(view ->{
+        text_criar_conta.setOnClickListener(view ->{
             startActivity(new Intent(this, CadastroActivity.class));
 
         });
 
-        binding.textRecuperaConta.setOnClickListener(view ->{
+        text_recuperar_conta.setOnClickListener(view ->{
             startActivity(new Intent(this, RecuperarContaActivity.class));
 
         });
