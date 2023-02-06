@@ -19,7 +19,10 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.controledeestoque.R;
+import com.example.controledeestoque.helper.FirebaseHelper;
 import com.example.controledeestoque.model.Produto;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.normal.TedPermission;
 
@@ -119,6 +122,13 @@ public class FromProdutoActivity extends AppCompatActivity {
                             produto.setNome(nome);
                             produto.setEstoque(qtd);
                             produto.setValor(valorProduto);
+
+                            if(caminhoImagem == null){
+                                Toast.makeText(this, "Selecione uma imagem.", Toast.LENGTH_SHORT).show();
+                            }else {
+                                salvarImagemProduto();
+                            }
+
                             finish();
 
                         } else {
@@ -145,6 +155,23 @@ public class FromProdutoActivity extends AppCompatActivity {
             edit_produto.setError("Informe o nome do produto.");
         }
 
+    }
+
+    private void salvarImagemProduto(){
+        StorageReference reference = FirebaseHelper.getStorageReference()
+                .child("imagens")
+                .child("produtos")
+                .child(FirebaseHelper.getIdFirebase())
+                .child(produto.getId() + ".jpeg");
+
+        UploadTask uploadTask = reference.putFile(Uri.parse(caminhoImagem));
+        uploadTask.addOnSuccessListener(taskSnapshot -> reference.getDownloadUrl().addOnCompleteListener(task -> {
+
+            produto.setUrlImagem(task.getResult().toString());
+            produto.salvarProduto();
+            finish();
+
+        })).addOnFailureListener(e -> Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show());
     }
 
     private void inicializarComponentes () {
@@ -179,7 +206,8 @@ public class FromProdutoActivity extends AppCompatActivity {
                         throw new RuntimeException(e);
                     }
                 }
-                Log.i("INFOTESTE", "onActivityResult: "+caminhoImagem);
+                imagem_produto.setImageBitmap(imagem);
+                //Log.i("INFOTESTE", "onActivityResult: "+caminhoImagem);
             }
         }
     }

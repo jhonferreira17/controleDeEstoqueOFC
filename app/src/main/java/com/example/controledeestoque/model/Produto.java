@@ -10,6 +10,7 @@ public class Produto  implements Serializable {
     private String nome;
     private int estoque;
     private double valor;
+    private String urlImagem;
 
     public Produto() {
         DatabaseReference reference = FirebaseHelper.getDatabaseReference();
@@ -63,5 +64,13 @@ public class Produto  implements Serializable {
 
     public void setValor(double valor) {
         this.valor = valor;
+    }
+
+    public String getUrlImagem() {
+        return urlImagem;
+    }
+
+    public void setUrlImagem(String urlImagem) {
+        this.urlImagem = urlImagem;
     }
 }
