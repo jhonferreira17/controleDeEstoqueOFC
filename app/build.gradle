@@ -43,8 +43,14 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:31.2.0')
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.firebase:firebase-database'
+    implementation 'com.google.firebase:firebase-storage'
 
+    //TedPermission
+    implementation 'io.github.ParkSangGwon:tedpermission-normal:3.3.0'
 
     //SWIPEABLE
     implementation 'com.github.tsuryo:Swipeable-RecyclerView:1.1'
+
+    //PICASSO
+    implementation 'com.squareup.picasso:picasso:2.8'
 }

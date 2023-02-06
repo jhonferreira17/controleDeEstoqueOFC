@@ -130,7 +130,7 @@ public class ControleProdutoActivity extends AppCompatActivity implements  Adapt
             public void onSwipedRight(int position) {
 
                 Produto produto = produtoList.get(position);
-
+                produto.deletaProduto();
                 produtoList.remove(produto);
                 adapterProduto.notifyItemRemoved(position);
 
