@@ -21,15 +21,15 @@ public class RecuperarContaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recuperar_conta);
 
         iniciaComponentes();
-        buttonrecuperarConta.setOnClickListener(v->recurarSenha());
+        buttonrecuperarConta.setOnClickListener(v->recuperarSenha());
     }
 
-    public void recurarSenha() {
+    public void recuperarSenha() {
         String email = edit_email.getText().toString().trim();
 
         if (!email.isEmpty()) {
 
-            enviaEmail(email);
+            enviarEmail(email);
 
         } else {
             edit_email.requestFocus();
@@ -37,10 +37,10 @@ public class RecuperarContaActivity extends AppCompatActivity {
         }
     }
 
-    private void enviaEmail(String email) {
+    private void enviarEmail(String email) {
         FirebaseHelper.getAuth().sendPasswordResetEmail(email).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
-                Toast.makeText(this, "Email enviado com sucess!", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Email enviado com sucesso!", Toast.LENGTH_LONG).show();
             } else {
                 String error = task.getException().getMessage();
                 Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
