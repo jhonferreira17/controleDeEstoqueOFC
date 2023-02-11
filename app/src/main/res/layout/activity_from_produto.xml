@@ -47,6 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:inputType="text"
+            android:textColor="@color/corbutton"
             android:background="@drawable/background_edit_text"
             android:hint="Nome do Produto"
             android:padding="16dp"
@@ -68,6 +69,7 @@
             android:background="@drawable/background_edit_text"
             android:hint="Quantidade"
             android:padding="16dp"
+            android:textColor="@color/corbutton"
             android:textColorHint="@color/white"/>
 
         <TextView
@@ -86,6 +88,7 @@
             android:background="@drawable/background_edit_text"
             android:hint="Valor do produto"
             android:padding="16dp"
+            android:textColor="@color/corbutton"
             android:textColorHint="@color/white"/>
 
         <androidx.appcompat.widget.AppCompatButton
